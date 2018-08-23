@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DRINKS_HASH</title>
-    <script src="HashStorage.js"></script>
+    <script src="/js/HashStorage.js"></script>
 </head>
 <body>
-        <input type="button" onclick="addValue()" value="Add Drink"/>
+
+        <script>
+               
+                var drinkStorage = new HashStorage();
+        
+        </script>
+
+        <input type="button" onclick="drinkStorage.addDrink()" value="Add Drink"/>
         <input type="button" onclick="getValue()" value="Drink's info"/>
         <input type="button" onclick="deleteValue()" value="Delete drink"/>
     
+
+        
 </body>
 </html>

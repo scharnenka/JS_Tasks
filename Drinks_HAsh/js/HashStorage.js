@@ -1,8 +1,25 @@
-function HashStorage (drink) {
+function HashStorage () {
     var self=this;
-    self.addValue = function (key,value) {}
-    self.getValue = function (key) {}
-    self.deleteValue = function (key) {}
+    var storage={};
+    self.addValue = function (key,value) {
+        storage[key]=value;
+    }
+    self.getValue = function (key) {
+        if (key in storage) {
+            return storage[key];
+        }
+        else {
+            return false;
+        }    
+    }
+    self.deleteValue = function (key) {
+        if (key in storage) {
+            delete storage[key];
+        }
+        else {
+            alert("No that drink");
+        }    
+    }
+    self.getKeys = function() {}
 }
 
-var drinkStorage = new HashStorage();
