@@ -3,6 +3,7 @@ function HashStorage () {
     var storage={};
     self.addValue = function (key,value) {
         storage[key]=value;
+        alert(storage[key]);
     }
     self.getValue = function (key) {
         if (key in storage) {

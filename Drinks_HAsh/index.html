@@ -15,11 +15,33 @@
         
         </script>
 
-        <input type="button" onclick="drinkStorage.addDrink()" value="Add Drink"/>
-        <input type="button" onclick="getValue()" value="Drink's info"/>
+        <input type="button" onclick="addDrink()" value="Add Drink"/>
+        <input type="button" onclick="getDrink()" value="Drink's info"/>
         <input type="button" onclick="deleteValue()" value="Delete drink"/>
     
+<script>
+        function addDrink () {
+                var drinkName=prompt('Drink Name?');
+                var isDrinkAlco=confirm('is that drink alco?');
+                var recipe=prompt('input receipt');
+                var info={'isAlco' : isDrinkAlco, 'recipeDrink': recipe };
+                drinkStorage.addValue(drinkName,info);
+                
+        }
 
+        function getDrink() {
+                var drinkName=prompt('Drink Name?');
+                var info=drinkStorage.getValue(drinkName);
+                if (info) {
+                        alert ('Name' + drinkName +'\nInfo: ' + (info.isAlco ? 'alco':'not alco') + '/nRecipe: ' + info.recipeDrink);
+                }
+                else {
+                        alert ('There is no such drink in a base');
+                }
+
+
+        }
+</script>
         
 </body>
 </html>
