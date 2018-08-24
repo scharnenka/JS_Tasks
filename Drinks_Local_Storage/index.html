@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DRINKS_HASH</title>
+    <script src="/Drinks_Local_Storage/js/LocalStorage.js"></script>
+</head>
+<body>
+
+        <script>
+               
+                var drinkStorage = new HashStorage();
+        
+        </script>
+
+        <input type="button" onclick="addDrink()" value="Add Drink"/>
+        <input type="button" onclick="getDrink()" value="Drink's info"/>
+        <input type="button" onclick="deleteDrink()" value="Delete drink"/>
+        <input type="button" onclick="listDrink()" value="List drink"/>
+    
+<script>
+        function addDrink () {
+                var drinkName=prompt('Drink Name?');
+                var isDrinkAlco=confirm('is that drink alco?');
+                var recipe=prompt('input receipt');
+                var info={'isAlco' : isDrinkAlco, 'recipeDrink': recipe };
+                drinkStorage.addValue(drinkName,info);
+                
+        }
+
+        function getDrink() {
+                var drinkName=prompt('Drink Name?');
+                var info=drinkStorage.getValue(drinkName);
+                if (info) {
+                        alert ('Name: ' + drinkName +'\nInfo: ' + (info.isAlco ? 'alco':'not alco') + '\nRecipe: ' + info.recipeDrink);
+                }
+                else {
+                        alert ('There is no such drink in a base');
+                }
+        }
+
+        function deleteDrink () {
+                var drinkName=prompt('Drink Name?');
+                drinkStorage.deleteValue(drinkName);
+        }
+
+        function listDrink () {
+                alert(drinkStorage.getKeys());
+        }
+</script>
+        
+</body>
+</html>
