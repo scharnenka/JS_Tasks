@@ -21,6 +21,12 @@ function HashStorage () {
             alert("No that drink");
         }    
     }
-    self.getKeys = function() {}
+    self.getKeys = function() {
+        drinksHash=[];
+        for (key in storage) {
+            drinksHash.push(key);
+        }
+        return drinksHash;
+    }
 }
 
