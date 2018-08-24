@@ -3,6 +3,7 @@ function LocalStorage () {
     var storage={};
     self.addValue = function (key,value) {
         storage[key]=value;
+        localStorage.setItem(ключ,значение)
         alert(storage[key]);
     }
     self.getValue = function (key) {
